@@ -1,0 +1,26 @@
+.infinit-scroll-text {
+  word-break: break-all;
+  overflow-wrap: break-word;
+  font-size: x-small;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  overflow: hidden;
+  height: 100vh;
+  background-color: rgb(80, 65, 65);
+  color: antiquewhite;
+}
+
+.infinit-scroll-text span {
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  animation: scrollText 30s linear infinite;
+}
+
+@keyframes scrollText {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}
