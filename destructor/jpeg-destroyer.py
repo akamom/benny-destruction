@@ -10,11 +10,9 @@ def create_new_images(input_image, num_new_images, manipulator):
         print(f"Create Image: {i}")
         manipulator.randomise()
         manipulator.execute()
-        
-        
-        input_image.show()
-        #if (i == num_new_images-1):
-        #    input_image.save(f"./modified_image_{i}.jpg", 'JPEG')
+
+        if (i == num_new_images-1):
+            input_image.save(f"./modified_image_{i}.jpg", 'JPEG')
 
 if __name__ == "__main__":
     image = load_image()
