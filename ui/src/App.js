@@ -1,17 +1,21 @@
 import './App.css';
-import destructionImage from './data/test.jpg'
-import React, { useState } from 'react';
-
-const getTextFromFile = async (filePath) => {
-  return await fetch(`${process.env.PUBLIC_URL}/${filePath}`)
-    .then(data => data.text());
-}
+import destructionImage from './data/destroyme.jpg'
+import React, { useState, useEffect } from 'react';
 
 function App() {
+  const [fileContent, setFileContent] = useState("");
+
+  useEffect(() => {
+    fetch("/myfile.txt")
+      .then((response) => response.text())
+      .then((text) => setFileContent(text))
+      .catch((error) => console.error("Error fetching the file:", error));
+  }, []);
+
   return (
     <div className='code-image-container'>
       <div className='code-container'>
-        Code
+        {fileContent}
       </div>
       <div className='image-container'>
         <img className='image' src={destructionImage} alt='Replacement Text'/>

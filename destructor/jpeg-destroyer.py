@@ -7,7 +7,7 @@ def load_image():
 
 def create_new_images(input_image, num_new_images, manipulator):
     for i in range(num_new_images):
-        print(f"Create Image: {i}")
+        #print(f"Create Image: {i}")
         manipulator.randomise()
         manipulator.execute()
 

@@ -4,14 +4,17 @@
 }
 
 .code-container {
-  flex-basis: 50%;
+  flex: 1;
+  overflow-wrap: break-word; /* Allows breaking of long words */
+  word-break: break-all;     /* Breaks words at any character */
+  white-space: normal;       /* Normal white space handling */
 }
 
 .image-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  flex-basis: 50%;
+  flex: 1;
 }
 
 .image {
