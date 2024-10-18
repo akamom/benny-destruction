@@ -1,0 +1,9 @@
+.code-container {
+    flex: 1;
+    /* overflow-wrap: break-word; */
+    /* word-break: break-all; */
+    white-space: normal;
+
+    
+    font-family: 'Inconsolata', monospace;
+  }
