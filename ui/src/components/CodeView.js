@@ -4,10 +4,21 @@ import { Compressor } from '../util/compress';
 import { Differencer } from '../util/difference';
 import destructionImage from '../data/test.jpg'
 import originalImage from '../data/frida.jpg'
+import { useScramble } from "use-scramble";
 
 const CodeView = () => {
     const [original, setOriginal] = useState(null);
     const [code, setCode] = useState([]);
+
+    const { ref } = useScramble({
+        text: code.join(' '),
+        speed: 0.10,
+        tick: 10000.00,
+        step: 50000,
+        overflow: true,
+        scramble: 2,
+        overdrive: false
+    });
 
     useEffect(() => {
         loadImage(originalImage)
@@ -16,9 +27,16 @@ const CodeView = () => {
                 const compressedCanvas = compress(canves);
                 setOriginal(compressedCanvas)
             })
+    }, [])
+
+    useEffect(() => {
+        if (original === null) {
+            return
+        }
+
         const intervalId = setInterval(() => generateDifference(), 1000);
         return () => clearInterval(intervalId);
-    }, [])
+    }, [original])
 
     function generateDifference() {
         loadImage(destructionImage)
@@ -34,13 +52,15 @@ const CodeView = () => {
         if (canves !== null) {
             const ctx = canves.getContext('2d');
             const imageData = ctx.getImageData(0, 0, canves.width, canves.height);
-            const compressor = new Compressor(20, 20);
+            const compressor = new Compressor(40, 40);
             const avgChunks = compressor.execute(imageData, canves.width, canves.height);
             return avgChunks;
         }
     }
 
     function difference(destroy) {
+        console.log(original)
+        console.log(destroy)
         const differencer = new Differencer(original, destroy);
         return differencer.execute();
     }
@@ -66,7 +86,8 @@ const CodeView = () => {
 
     return (
         <div className='code-container'>
-            {code.join('\t')}
+            {/* {code.join('\t')} */}
+            <p ref={ref} />
         </div>
     );
 }

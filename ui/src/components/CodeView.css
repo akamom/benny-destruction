@@ -4,6 +4,7 @@
     /* word-break: break-all; */
     white-space: normal;
 
-    
-    font-family: 'Inconsolata', monospace;
+    font-family: 'Courier New', monospace;
+    color: #50FA7B
+    /* font-family: 'Inconsolata', monospace; */
   }

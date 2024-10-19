@@ -1,1 +1,3 @@
+glitch_this==1.0.3
+numpy==2.1.2
 pillow==10.3.0

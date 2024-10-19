@@ -32,10 +32,9 @@ export class Differencer {
         }
 
         const sumArray = [];
-        // Round the sum of differences and convert to hexadecimal if non-zero
         for (const diff of diffArray) {
             const roundedDiff = Math.round(diff.reduce((acc, val) => acc + val, 0));
-            if (roundedDiff !== 0) {
+            if (roundedDiff >= 1.5) {
                 const absRoundedDiff = Math.abs(roundedDiff);
                 sumArray.push(absRoundedDiff.toString(16).padStart(4, '0'));
             }
