@@ -2,8 +2,8 @@ import './CodeView.css';
 import React, { useState, useEffect } from 'react';
 import { Compressor } from '../util/compress';
 import { Differencer } from '../util/difference';
-import destructionImage from '../data/test.jpg'
-import originalImage from '../data/frida.jpg'
+import destructionImage from '../data/destroyme.jpg'
+import originalImage from '../data/original.jpg'
 import { useScramble } from "use-scramble";
 
 const CodeView = () => {

@@ -1,6 +1,6 @@
 import './ImageView.css';
-import React, { useEffect, useState } from 'react';
-import destructionImage from '../data/test.jpg'
+import React from 'react';
+import destructionImage from '../data/destroyme.jpg'
 
 const ImageView = () => {
 
