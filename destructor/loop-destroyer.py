@@ -14,10 +14,10 @@ glitch_amount = 2 #  A number between 0.1 to 10.0
 glitch_color_offset = True
 glitch_scan_lines = False
 
-pigment_degregation_start = 0
-pigment_degregation_end = 999999999
-pigment_degregation_grayscale = 0.988 # Reduce saturation (0 = grayscale, 1 = original color)
-pigment_degregation_brightness = 1.0122  # Increase brightness (1 = original, >1 = brighter)
+pigment_degredation_start = 0
+pigment_degredation_end = 999999999
+pigment_degredation_grayscale = 0.988 # Reduce saturation (0 = grayscale, 1 = original color)
+pigment_degredation_brightness = 1.0122  # Increase brightness (1 = original, >1 = brighter)
 
 delete_original = False
 
@@ -55,5 +55,4 @@ if __name__ == "__main__":
             destroy_image = glitcher.glitch_image(destroy_image, glitch_amount, color_offset=glitch_color_offset, scan_lines=glitch_scan_lines)
 
         destroy_image.save(image_path_destroyme, 'JPEG')
-
-        # time.sleep(sleep_loop)
+        time.sleep(sleep_loop)
