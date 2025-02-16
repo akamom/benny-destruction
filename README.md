@@ -9,7 +9,7 @@ The project consist of two projects:
 ### Destructor
 The objective of the "Destructor" is to take a JPEG and destroy it in several iterations
 
-Please read the [Destructor README](.ui/README.md) for further instructions on how to run the Destructor.
+Please read the [Destructor README](destructor/README.md) for further instructions on how to run the Destructor.
 
 ### UI
 Displays the destroyed image and its source code.
